@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.miran.tickratechanger.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MinecraftServerMixinImpl"
+  ],
+  "client": [
+    "accessor.MinecraftAccessor",
+    "accessor.TimerAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

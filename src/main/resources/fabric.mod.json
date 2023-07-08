@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "tickratechanger",
+  "version": "${version}",
+
+  "name": "Tickrate Changer",
+  "description": "Changes tickrate of the server",
+  "authors": [
+
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "MIT",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.miran.tickratechanger.MainClient"
+    ],
+    "server": [
+      "net.miran.tickratechanger.MainServer"
+    ]
+  },
+  "mixins": [
+    "tickratechanger.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
