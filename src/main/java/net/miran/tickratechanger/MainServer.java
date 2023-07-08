@@ -17,7 +17,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 
-import static net.miran.tickratechanger.Packets.HANDSHAKE_PACKET;
+
 import static net.miran.tickratechanger.Packets.TICKRATE_PACKET;
 
 @Environment(EnvType.SERVER)
@@ -33,7 +33,7 @@ public class MainServer implements DedicatedServerModInitializer {
         ServerPlayConnectionEvents.JOIN.register((packetListener,packetSender,minecraftServer)->{
             ServerPlayer player = packetListener.player;
 
-            if (!ServerPlayNetworking.canSend(player,HANDSHAKE_PACKET)) {
+            if (!ServerPlayNetworking.canSend(player,TICKRATE_PACKET)) {
                 player.connection.disconnect(Component.literal("You need to have Tickrate Changer installed to join this server!").withStyle(ChatFormatting.RED));
                 return;
             }

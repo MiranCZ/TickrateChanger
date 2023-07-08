@@ -10,7 +10,6 @@ import net.minecraft.client.Minecraft;
 import net.miran.tickratechanger.mixin.accessor.MinecraftAccessor;
 import net.miran.tickratechanger.mixin.accessor.TimerAccessor;
 
-import static net.miran.tickratechanger.Packets.HANDSHAKE_PACKET;
 import static net.miran.tickratechanger.Packets.TICKRATE_PACKET;
 
 @Environment(EnvType.CLIENT)
@@ -24,11 +23,6 @@ public class MainClient implements ClientModInitializer {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		});
-
-		//registers the channel so server can see the mod (or at least a part of it) is installed
-		ClientPlayNetworking.registerGlobalReceiver(HANDSHAKE_PACKET, (player, handler, data, d) -> {
-
 		});
 
 		ClientPlayConnectionEvents.DISCONNECT.register((a, b) -> {
